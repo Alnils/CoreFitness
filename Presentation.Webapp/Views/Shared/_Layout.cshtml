@@ -1,0 +1,40 @@
+﻿@{
+    var title = ViewData["Title"]?.ToString();
+    var pageTitle = string.IsNullOrWhiteSpace(title)
+        ? "CoreFitness Club | Gym & Fitness"
+        : $"{title} | CoreFitness Club";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@pageTitle</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="app-layout">
+        <header>
+            <partial name="Partials/_HeaderSection" />
+
+            @if (IsSectionDefined("Hero"))
+            {
+                @RenderSection("Hero")
+            }
+        </header>
+        <main>
+            @RenderBody()
+            main
+        </main>
+        <footer>
+            <partial name="Partials/_FooterSection" />
+        </footer>
+    </div>
+
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
