@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Infrastructure.Persistence.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Persistence.Contexts;
 
@@ -9,5 +10,7 @@ public class DataContext(DbContextOptions<DataContext> options) : DbContext(opti
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(DataContext).Assembly);
     } 
 
+    public DbSet<MembershipEntity> Memberships => Set<MembershipEntity>();
+    public DbSet<MembershipBenefitEntity> MembershipBenefits => Set<MembershipBenefitEntity>();
 
 }
