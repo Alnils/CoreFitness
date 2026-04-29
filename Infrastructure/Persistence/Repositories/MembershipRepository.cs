@@ -13,7 +13,21 @@ public sealed class MembershipRepository(DataContext context)
 {
     protected override void ApplyPropertyUpdates(MembershipEntity entity, Membership model)
     {
-        throw new NotImplementedException();
+        entity.Title = model.Title;
+        entity.Description = model.Description;
+        entity.Price = model.Price;
+        entity.MonthlyClasses = model.MonthlyClasses;
+        // Sync benefits: clear old, add new
+        entity.Benefits.Clear();
+        foreach (var benefit in model.Benefits)
+        {
+            entity.Benefits.Add(new MembershipBenefitEntity
+            {
+                Id = Guid.NewGuid().ToString(),
+                MembershipId = model.Id,
+                Benefit = benefit
+            });
+        }
     }
 
     protected override string GetId(Membership model)
