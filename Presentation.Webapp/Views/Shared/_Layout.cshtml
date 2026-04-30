@@ -13,11 +13,14 @@
     <title>@pageTitle</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100..1000;1,100..1000&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
     <div class="app-layout">
         <header>
-            <partial name="Partials/_HeaderSection" />
+            <partial name="Partials/Globals/_HeaderSection" />
 
             @if (IsSectionDefined("Hero"))
             {
@@ -29,11 +32,11 @@
             main
         </main>
         <footer>
-            <partial name="Partials/_FooterSection" />
+            <partial name="Partials/Globals/_FooterSection" />
         </footer>
     </div>
 
-
+    <script src="~/js/lib/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

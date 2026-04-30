@@ -1,6 +1,5 @@
 ﻿using Domain.Abstractions.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography;
 
 namespace Infrastructure.Persistence.Repositories;
 

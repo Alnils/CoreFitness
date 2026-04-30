@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace Infrastructure.Persistence.Extensions;
 
-public static class PersistanceRegistrationExtension
+public static class PersistenceRegistrationExtension
 {
     public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration, IHostEnvironment env)
     {

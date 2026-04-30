@@ -18,6 +18,8 @@
 
   <ItemGroup>
     <Folder Include="Memberships\Inputs\" />
+    <Folder Include="Members\Inputs\" />
+    <Folder Include="Members\Services\" />
   </ItemGroup>
 
 </Project>

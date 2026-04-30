@@ -1,6 +1,6 @@
 using Application.Extensions;
 using Infrastructure.Extensions;
-using Infrastructure.Persistence;
+using Infrastructure.Persistence.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +19,7 @@ await PersistenceDatabaseInitializer.InitializeAsync(app.Services, app.Environme
 
 app.UseHsts();
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
