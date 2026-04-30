@@ -38,20 +38,41 @@ body {
 
 }
 
+/* Layouts */
+
 .app-layout {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100dvh;
-
     padding: 1rem;
 }
+
+.auth-layout {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 100dvh;
+    padding: 1rem;
+}
+
+
 
 header {
     background-color: var(--header-bg-color);
+    background-image: url('/images/header-bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
     color: var(--header-text-color);
     border-radius: 1.25rem;
-    padding: 1rem;
+    min-height: 100px;
+    padding: 1.5rem, 2rem;
+    display: grid;
+    align-items: center;
+
+    &:has(.hero-section) {
+        padding: 1.5rem, 2rem, 0;
+    }
 }
+
 
 footer {
     background-color: var(--footer-bg-color);

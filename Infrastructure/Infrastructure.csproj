@@ -11,10 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Identity\" />
-    <Folder Include="Persistence\Configurations\Members\" />
     <Folder Include="Persistence\Database\" />
-    <Folder Include="Persistence\Entities\Members\" />
     <Folder Include="Persistence\Repositories\Members\" />
   </ItemGroup>
 
