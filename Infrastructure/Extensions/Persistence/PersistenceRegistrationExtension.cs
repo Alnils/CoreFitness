@@ -1,10 +1,8 @@
-﻿using Infrastructure.Persistence.Contexts;
-using Infrastructure.Persistence.Repositories.Extensions;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Infrastructure.Persistence.Extensions;
+namespace Infrastructure.Extensions.Persistence;
 
 public static class PersistenceRegistrationExtension
 {

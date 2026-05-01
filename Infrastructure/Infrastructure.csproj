@@ -12,10 +12,10 @@
 
   <ItemGroup>
     <Folder Include="Persistence\Database\" />
-    <Folder Include="Persistence\Repositories\Members\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="microsoft.aspnetcore.identity" Version="2.3.9" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.7" />
