@@ -11,6 +11,7 @@ internal class MemberEntityConfiguration : IEntityTypeConfiguration<MemberEntity
     public void Configure(EntityTypeBuilder<MemberEntity> builder)
     {
         builder.ToTable("Members");
+        builder.HasKey(x => x.Id);
         builder.HasIndex(x => x.Id);
         builder.Property(x => x.Id).IsRequired();
         builder.Property(x => x.UserId).IsRequired();
