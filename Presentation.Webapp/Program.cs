@@ -5,10 +5,8 @@ using Infrastructure.Persistence.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddRouting(options =>
-{
-    options.LowercaseUrls = true;
-});
+builder.Services.AddRouting(options =>{    options.LowercaseUrls = true;});
+builder.Services.AddSession();
 
 builder.Services.AddApplication(builder.Configuration, builder.Environment);
 builder.Services.AddInfrastructure(builder.Configuration, builder.Environment);
@@ -22,6 +20,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
+app.UseSession();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();

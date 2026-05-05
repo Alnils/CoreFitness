@@ -9,7 +9,7 @@ namespace Application.Members.Services;
 
 public class RegisterMemberService(IIdentityService identityService, IMemberRepository memberRepository) : IRegisterMemberService
 {
-    public async Task<Result<string?>> ExecuteAsync(RegisterMemberAccountInput input, CancellationToken ct)
+    public async Task<Result<string?>> ExecuteAsync(RegisterMemberInput input, CancellationToken ct)
     {
         try
         {

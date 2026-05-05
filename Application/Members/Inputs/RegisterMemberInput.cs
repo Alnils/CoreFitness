@@ -1,6 +1,6 @@
 ﻿namespace Application.Members.Inputs;
 
-public record RegisterMemberAccountInput
+public record RegisterMemberInput
 (
     string Email,
     string Password
