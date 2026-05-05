@@ -1,9 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Application.Abstractions.Identity;
+using Application.Members.Abstractions;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.Webapp.Controllers;
 
-public class AuthenticationController : Controller
+public class AuthenticationController
+(
+    IRegisterMemberService registerMemberService,
+    ISignInMemberService signInMemberService,
+    IIdentityService identityService
+
+) : Controller
+
 {
+    public const string RegistrationEmailSessionKey = "RegistrationEmail";
+
     public IActionResult SignIn()
     {
         return View();
