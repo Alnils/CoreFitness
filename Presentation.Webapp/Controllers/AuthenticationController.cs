@@ -29,7 +29,10 @@ public class AuthenticationController
     public async Task<IActionResult> SignIn(SignInForm form, CancellationToken ct = default)
     {
         if (!ModelState.IsValid)
+        {
+            ViewData["ErrorMessage"] = "Invalid Email or Password.";
             return View(form);
+        }
 
         var input = new SignInInput(form.Email, form.Password, form.RememberMe);
 
