@@ -19,7 +19,7 @@
             <input class="form-input" asp-for="Email"/>
         </div>
         <div class="form-group">
-            <a class="forgot-password" asp-action="ForgotPassword" asp-asp-controller="Authentication">Forgot your password?</a>
+            <a class="forgot-password" asp-action="ForgotPassword" asp-controller="Authentication">Forgot your password?</a>
             <input class="form-input" asp-for="Password" />
         </div>
 
@@ -28,7 +28,7 @@
                 <input type="checkbox" asp-for="RememberMe"/>
                 <span class="checkmark"></span>
             </label>
-            <label class="form-label checkbox" asp-for="RememberMe">Rememer me</label>
+            <label class="form-label checkbox" asp-for="RememberMe">Remember me</label>
         </div>
 
         <button class="form-button" type="submit">Continue</button>
@@ -39,8 +39,8 @@
                 @ViewData["ErrorMessage"]
             </p>
         }
-        <p class="additional-infomation">
-            Not a member? <a asp-action="SignUp" asp-asp-controller="Authentication">Become One</a>
+        <p class="additional-information">
+            Not a member? <a asp-action="SignUp" asp-controller="Authentication">Become One</a>
         </p>
     </form>
 </section>
