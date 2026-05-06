@@ -30,6 +30,7 @@ public class AccountController
 
         var viewModel = new MyAccountViewModel
         {
+            Email = user.Email ?? string.Empty,
             AboutMeForm = new MyProfileForm
             {
                 FirstName = profile.Value?.FirstName ?? string.Empty,
@@ -45,13 +46,14 @@ public class AccountController
     [HttpPost("my")]
     public async Task<IActionResult> My(MyAccountViewModel viewModel, CancellationToken ct = default)
     {
-        if(!ModelState.IsValid)
-            return View(viewModel);
-
-
         var user = await userManager.GetUserAsync(User);
         if (user is null)
             return Challenge();
+
+        if (!ModelState.IsValid)
+            return View(viewModel);
+
+        viewModel.Email = user.Email ?? string.Empty;
 
         var input = new UpdateMemberProfileInput
             (

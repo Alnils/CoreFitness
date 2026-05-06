@@ -1,29 +1,44 @@
 ﻿
 <section class="header-section">
     <div class="logotype">
-        <a href="/"><img src="~/images/logotype.png" alt="CoreFitness Club Logo" class="logo-image" /></a>
+        <a class="logotype-link" href="/">
+            <img src="~/images/logotype.png" alt="CoreFitness">
+        </a>
     </div>
     <nav class="main-menu">
         <ul class="menu">
             <li class="menu-item">
-                <a asp-controller="FitnessCenters" asp-action="Index">Fitness Centers</a>
+                <a class="menu-item-link" asp-controller="FitnessCenters" asp-action="Index">Fitness Centers</a>
             </li>
             <li class="menu-item">
-                <a asp-controller="Memberships" asp-action="Index">Memberships</a>
+                <a class="menu-item-link" asp-controller="Memberships" asp-action="Index">Memberships</a>
             </li>
             <li class="menu-item">
-                <a asp-controller="Training" asp-action="Index">Training</a>
+                <a class="menu-item-link" asp-controller="Training" asp-action="Index">Training</a>
             </li>
             <li class="menu-item">
-                <a asp-controller="CustomerService" asp-action="Index">Customer Service</a>
-            </li>
-            <li class="menu-item">
-                <a asp-controller="Store" asp-action="Index">Store</a>
+                <a class="menu-item-link" asp-controller="CustomerService" asp-action="Index">Customer Service</a>
             </li>
         </ul>
     </nav>
     <nav class="account-menu">
-        <a asp-controller="authentication" asp-action="sign-up">Become Member</a>
-        <a asp-controller="authentication" asp-action="sign-in">Sign In</a>
+        <ul class="menu">
+
+            @if (User.Identity?.IsAuthenticated ?? false)
+            {
+                <li class="menu-item">
+                    <a class="btn menu-item-button" asp-action="My" asp-controller="Account">My Account</a>
+                </li>
+            }
+            else
+            {
+                <li class="menu-item">
+                    <a class="menu-item-link" asp-action="SignUp" asp-controller="Authentication">Become Member</a>
+                </li>
+                <li class="menu-item">
+                    <a class="btn menu-item-button" asp-action="SignIn" asp-controller="Authentication">Sign In</a>
+                </li>
+            }
+        </ul>
     </nav>
 </section>

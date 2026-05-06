@@ -3,3 +3,70 @@
 @{
     ViewData["Title"] = "My Account";
 }
+
+<div class="container">
+    <partial name="Partials/Globals/_PageTitleSection"/>
+
+    <section class="my-account-section">
+        <aside class="my-account-sidebar">
+            <section class="profile-image-section"></section>
+            <section class="menu-options-section"></section>
+        </aside>
+
+        <section class="about-me-form-section">
+            <form class="about-me-form" asp-action="My" asp-controller="Account" method="post" novalidate>
+                <h2 class="title">About Me</h2>
+                <hr/>
+
+                @if (!string.IsNullOrWhiteSpace(ViewData["Message"]?.ToString()))
+                {
+                    if (ViewData["MessageType"]?.ToString() == "error")
+                    {
+                        <div class="error-message">
+                            <p>@ViewData["Message"]</p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="success-message">
+                            <p>@ViewData["Message"]</p>
+                        </div>
+                    }
+                }
+                <div class="form-group">
+                    <label class="form-label" asp-for="AboutMeForm.FirstName"></label>
+                    <input class="form-input" asp-for="AboutMeForm.FirstName"/>
+                    <span class="field-validation-error" asp-validation-for="AboutMeForm.FirstName"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" asp-for="AboutMeForm.LastName"></label>
+                    <input class="form-input" asp-for="AboutMeForm.LastName" />
+                    <span class="field-validation-error" asp-validation-for="AboutMeForm.LastName"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" asp-for="Email"></label>
+                    <input class="form-input" asp-for="Email" disabled/>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" asp-for="AboutMeForm.PhoneNumber"></label>
+                    <input class="form-input" asp-for="AboutMeForm.PhoneNumber" />
+                    <span class="field-validation-error" asp-validation-for="AboutMeForm.PhoneNumber"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" asp-for="AboutMeForm.ProfileImageUrl"></label>
+                    <input class="form-input" asp-for="AboutMeForm.ProfileImageUrl" />
+                    <span class="field-validation-error" asp-validation-for="AboutMeForm.ProfileImageUrl"></span>
+                </div>
+                
+                <div class="form-button-placement">
+                    <button class="form-button" type="submit">Save</button>
+                </div>
+            </form>
+        </section>
+
+
+
+    </section>
+
+
+</div>
