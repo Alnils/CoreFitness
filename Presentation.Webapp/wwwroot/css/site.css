@@ -497,7 +497,126 @@ hr.primary {
 }
 
 /* ============================================================
-   8. Authentication Forms
+   8. About Us Section
+   ============================================================ */
+
+.aboutus-section {
+    padding: 4rem 0;
+    background-color: var(--light-color);
+}
+
+.aboutus-area {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.aboutus-image-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.aboutus-image-main img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+}
+
+.aboutus-image-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.aboutus-image-box img,
+.aboutus-image-secondary img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+}
+
+.aboutus-content-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.aboutus-title {
+    background-color: var(--grey-color);
+    border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    align-self: flex-start;
+}
+
+.aboutus-title::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.aboutus-title p {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--white-color);
+}
+
+.aboutus-content-text h1 {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    color: var(--dark-color);
+}
+
+.aboutus-content-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--grey-color);
+    margin: 0;
+}
+
+.aboutus-content-textbox {
+    background-color: var(--white-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.aboutus-content-textbox p {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--dark-color);
+    margin: 0;
+}
+
+@media (width < 768px) {
+    .aboutus-area {
+        flex-direction: column;
+    }
+
+    .aboutus-image-row {
+        flex-direction: column;
+    }
+
+    .aboutus-content-text h1 {
+        font-size: 1.75rem;
+    }
+}
+
+/* ============================================================
+   9. Authentication Forms
    ============================================================ */
 
 .auth-section {
