@@ -698,7 +698,96 @@ hr.primary {
 }
 
 /* ============================================================
-   10. Authentication Forms
+   10. Store Section
+   ============================================================ */
+
+.store-section {
+    padding: 4rem 0;
+    background-color: var(--light-color);
+    text-align: center;
+}
+
+.store-title {
+    background-color: var(--grey-color);
+    border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.store-title::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.store-title p {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--white-color);
+}
+
+.store-content-text {
+    margin: 1.5rem 0;
+}
+
+.store-content-text h1 {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 auto 1rem;
+    max-width: 500px;
+    color: var(--dark-color);
+}
+
+.store-image-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.store-image-container img {
+    width: 100%;
+    max-width: 260px;
+    border-radius: var(--radius-lg);
+}
+
+.store-footer {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.store-footer p {
+    font-size: 1rem;
+    color: var(--grey-color);
+    margin: 0;
+}
+
+.store-footer a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    text-decoration: none;
+    border-bottom: 2px solid var(--primary-color);
+    cursor: pointer;
+}
+
+/* ============================================================
+   11. Authentication Forms
    ============================================================ */
 
 .auth-section {
