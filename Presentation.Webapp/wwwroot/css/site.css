@@ -1831,6 +1831,15 @@ hr.primary {
     background-color: #3A3844;
 }
 
+.menu-item-button {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+.menu-item-button:hover {
+    background-color: var(--link-hover-color);
+}
+
 /* ============================================================
    12. Utilities / Helpers
    ============================================================ */
