@@ -29,6 +29,11 @@
         </header>
         <main>
             @RenderBody()
+
+            @if (IsSectionDefined("FAQ"))
+            {
+                @RenderSection("FAQ")
+            }
         </main>
         <footer>
             <partial name="Partials/Globals/_FooterSection" />

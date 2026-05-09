@@ -897,6 +897,185 @@ hr.primary {
 }
 
 /* ============================================================
+   FAQ Section
+   ============================================================ */
+
+.faq-section {
+    padding: 4rem 0;
+    background-color: var(--light-color);
+}
+
+.faq-section .container {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.faq-image {
+    flex: 1;
+}
+
+.faq-image img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+}
+
+.faq-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faq-title {
+    background-color: var(--grey-color);
+    border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    align-self: flex-start;
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--white-color);
+}
+
+.faq-title::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.faq-text {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    color: var(--dark-color);
+}
+
+@media (width < 768px) {
+    .faq-section .container {
+        flex-direction: column;
+    }
+
+    .faq-text {
+        font-size: 1.75rem;
+    }
+}
+
+/* ============================================================
+   Accordion Component
+   ============================================================ */
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.accordion-item {
+    background-color: var(--white-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid transparent;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.accordion-item:has(.accordion-header.active) {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.accordion-header {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: color 0.2s ease;
+}
+
+.accordion-header:hover {
+    color: var(--grey-color);
+}
+
+.accordion-header.active {
+    color: var(--dark-color);
+}
+
+.accordion-header::after {
+    content: "+";
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--grey-color);
+    flex-shrink: 0;
+    transition: transform 0.3s ease, color 0.2s ease;
+}
+
+.accordion-header.active::after {
+    content: "−";
+    color: var(--primary-color);
+}
+
+.accordion-content {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.accordion-inner {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--grey-color);
+    margin-bottom: 1rem;
+}
+
+.faq-bullet-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.faq-bullet-list-item {
+    position: relative;
+    padding-left: 1.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--dark-color);
+    line-height: 1.5;
+}
+
+.faq-bullet-list-item::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+/* ============================================================
    11. Authentication Forms
    ============================================================ */
 
