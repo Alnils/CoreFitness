@@ -1397,6 +1397,285 @@ hr.primary {
 }
 
 /* ============================================================
+   New Membership Cards
+   ============================================================ */
+
+.membership-section {
+    padding: 2rem 0 4rem;
+}
+
+.membership-title {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-align: center;
+    margin: 0 0 2rem;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (width >= 768px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width >= 1200px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.standard-card {
+    background-color: var(--white-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+.standard-card-top {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.standard-card-top img {
+    width: 48px;
+    height: 48px;
+}
+
+.standard-card-top .bold-text {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin: 0;
+}
+
+.standard-card-top hr {
+    border: none;
+    height: 1px;
+    background-color: var(--auth-border-color);
+    margin: 0.5rem 0;
+}
+
+.standard-card-top p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--grey-color);
+    margin: 0;
+}
+
+.card-bullet {
+    list-style: none;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bullet-item {
+    position: relative;
+    padding-left: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--dark-color);
+    line-height: 1.5;
+}
+
+.bullet-item::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    font-weight: 700;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.standard-card-bottom {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    padding: 2rem;
+    margin-top: auto;
+}
+
+.price-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.price-info-text h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white-color);
+    margin: 0;
+    display: inline;
+}
+
+.price-info-text .small-text {
+    font-size: 0.875rem;
+    color: var(--white-color);
+    opacity: 0.8;
+    margin: 0 0 0 0.25rem;
+    display: inline;
+}
+
+.price-info-text p {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0.25rem 0 0;
+}
+
+.join-now,
+.yellow-button {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.join-now:hover,
+.yellow-button:hover {
+    background-color: var(--link-hover-color);
+    transform: translateY(-1px);
+}
+
+.join-now:active,
+.yellow-button:active {
+    transform: translateY(0);
+}
+
+.standard-card-bottom hr {
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin: 1.5rem 0 1rem;
+}
+
+.standard-card-bottom p:last-of-type {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    text-align: center;
+}
+
+.callus-card {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.callus-card h2,
+.callus-card h3,
+.callus-card .bold-text {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--white-color);
+    text-align: center;
+}
+
+.callus-card p {
+    text-align: center;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.callus-card hr {
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin: 0.5rem 0;
+}
+
+.callus-card .blod-text {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--white-color);
+    margin: 0;
+    text-align: center;
+}
+
+.callus-card .yellow-button {
+    align-self: center;
+    margin-top: 0.5rem;
+}
+
+.callus-card img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 60%;
+    height: auto;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.memberships-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.memberships-footer img {
+    width: 24px;
+    height: 24px;
+}
+
+.memberships-footer p {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 0;
+}
+
+/* ============================================================
    10. Account / Profile
    ============================================================ */
 

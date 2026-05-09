@@ -4,6 +4,90 @@
     ViewData["Title"] = "Our Memberships";
 }
 
+
+<section class="membership-section">
+    <h1 class="membership-title">Our Membership Offers</h1>
+    <div class="cards-container">
+        <div class="standard-card">
+            <div class="standard-card-top">
+                <img src="~/images/membership-card-icon.png"/>
+                <p class="bold-text">Standard Membership</p>
+                <hr/>
+                <p>
+                    With the Standard Membership, get access
+                    to our full range of gym facilities.
+                </p>
+                <ul class="card-bullet">
+                    <li class="bullet-item">Standard Locker</li>
+                    <li class="bullet-item">High-energy group fitness classes</li>
+                    <li class="bullet-item">Motivating & supportive environment</li>
+                </ul>
+            </div>
+            <div class="standard-card-bottom">
+                <div class="price-info-container">
+                    <div class="price-info-text">
+                        <h2>495.00</h2><p class="small-text">/Monthly</p>
+                        <p>* Monthly 20 Classes</p>
+                    </div>
+                    <button class="join-now">Join Now</button>
+                </div>
+                <hr/>
+                <p>Try Any Membership Free for 1 Week</p>
+            </div>
+        </div>
+
+        <div class="standard-card">
+            <div class="standard-card-top">
+                <img src="~/images/membership-card-icon.png" />
+                <p class="bold-text">Premium Membership</p>
+                <hr />
+                <p>
+                    With the Premium Membership, get access
+                    to our full range of gym facilities.
+                </p>
+                <ul class="card-bullet">
+                    <li class="bullet-item">Priority Support & Premium Locker</li>
+                    <li class="bullet-item">High-energy group fitness classes</li>
+                    <li class="bullet-item">Motivating & supportive environment</li>
+                </ul>
+            </div>
+            <div class="standard-card-bottom">
+                <div class="price-info-container">
+                    <div class="price-info-text">
+                        <h2>595.00</h2><p class="small-text">/Monthly</p>
+                        <p>* Monthly 20 Classes</p>
+                    </div>
+                    <button class="join-now">Join Now</button>
+                </div>
+                <hr />
+                <p>Try Any Membership Free for 1 Week</p>
+            </div>
+        </div>
+
+        <div class="callus-card">
+            <h3 class="bold-text">Get Your Membership</h3>
+            <p>
+                Our memberships give you access to all
+                equipment, personalized training.
+            </p>
+            <hr/>
+            <h2 class="blod-text">Call Us At: +(46) 8 410 521 00</h2>
+            <button class="yellow-button">Call Us Today!</button>
+            <img src="~/images/membership-black-card-image-1.png"/>
+        </div>
+    </div>
+
+    <div class="memberships-footer">
+        <img src="~/images/membership-bullet-1.png"/>
+        <p>Get 30 day free trial</p>
+        <img src="~/images/membership-bullet-1.png" />
+        <p>No any hidden fees pay</p>
+        <img src="~/images/membership-bullet-1.png" />
+        <p>You can cancel anytime</p>
+    </div>
+</section>
+
+
 <div>
     @foreach(var item in Model.Memberships)
     {
