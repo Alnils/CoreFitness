@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.Webapp.Models.Account;
+using Application.Abstractions.Identity;
 
 namespace Presentation.Webapp.Controllers;
 
@@ -14,7 +15,9 @@ public class AccountController
     (
         UserManager<ApplicationUser> userManager,
         IGetMemberProfileService getMemberProfileService,
-        IUpdateMemberProfileService updateMemberProfileService
+        IUpdateMemberProfileService updateMemberProfileService,
+        IRemoveMemberService removeMemberService,
+        IIdentityService identityService
     ) : Controller
 {
     [HttpGet("my")]
@@ -76,5 +79,23 @@ public class AccountController
         ViewData["MessageType"] = "success";
 
         return View(viewModel);
+    }
+
+    [HttpPost("remove")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Remove(CancellationToken ct = default)
+    {
+        var user = await userManager.GetUserAsync(User);
+        if (user is null)
+            return Challenge();
+        var deleteResult = await removeMemberService.RemoveMemberAsync(user.Id, ct);
+        if (!deleteResult.Success)
+        {
+            TempData["Message"] = deleteResult.ErrorMessage ?? "Failed to remove account.";
+            TempData["MessageType"] = "error";
+            return RedirectToAction(nameof(My));
+        }
+        await identityService.SignOutAsync(ct);
+        return RedirectToAction("Index", "Home");
     }
 }

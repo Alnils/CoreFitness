@@ -24,7 +24,10 @@
                 </form>
             </section>
             <p>If you like to cancel your account click below</p>
-            <a class="warning-text">Remove Account</a>
+            <form asp-action="Remove" asp-controller="Account" method="post"
+                  onsubmit="return confirm('Are you sure you want to permanently remove your account? This action cannot be undone.');">
+                <button type="submit" class="warning-text">Remove Account</button>
+            </form>
         </aside>
 
         <section class="about-me-form-section">
