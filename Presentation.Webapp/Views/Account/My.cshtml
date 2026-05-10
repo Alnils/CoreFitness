@@ -19,8 +19,12 @@
                 <button class="profile-menu-button">About Me</button>
                 <button class="profile-menu-button">My Membership</button>
                 <button class="profile-menu-button">My Bookings</button>
-                <button class="profile-menu-button" asp-action="SignOut" asp-controller="Authentication">Sign Out</button>
+                <form asp-action="SignOut" asp-controller="Authentication" method="post">
+                    <button type="submit" class="profile-menu-button" style="width: 100%; text-align: left;">Sign Out</button>
+                </form>
             </section>
+            <p>If you like to cancel your account click below</p>
+            <a class="warning-text">Remove Account</a>
         </aside>
 
         <section class="about-me-form-section">

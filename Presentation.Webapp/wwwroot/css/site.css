@@ -2103,6 +2103,12 @@ hr.primary {
     background-color: #3A3844;
 }
 
+.menu-options-section form {
+    margin: 0;
+    padding: 0;
+    display: contents;
+}
+
 .about-me-form-section {
     display: flex;
     flex-direction: column;
