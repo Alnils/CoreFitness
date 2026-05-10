@@ -14,6 +14,7 @@ public static class MemberRegistrationExtension
         services.AddScoped<ISignInMemberService, SignInMemberService>();
         services.AddScoped<IGetMemberProfileService, GetMemberProfileService>();
         services.AddScoped<IUpdateMemberProfileService, UpdateMemberProfileService>();
+        services.AddScoped<IRemoveMemberService, RemoveMemberService>();
 
         return services;
     }

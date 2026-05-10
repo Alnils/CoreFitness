@@ -29,4 +29,14 @@ public class IdentityService(UserManager<ApplicationUser> userManager, SignInMan
     {
         return signInManager.SignOutAsync();
     }
+
+    public async Task<Result> DeleteUserAsync(string userId, CancellationToken ct = default)
+    {
+        var user = await userManager.FindByIdAsync(userId);
+        if (user is null)
+            return Result.NotFound("User account not found.");
+
+        var result = await userManager.DeleteAsync(user);
+        return result.Succeeded ? Result.Ok() : Result.Error("Failed to delete user account.");
+    }
 }
