@@ -15,11 +15,11 @@
             <section class="menu-options-section">
                 <div class="menu-header">
                     <h3>Menu Options</h3>
-                    <button class="profile-menu-button">About Me</button>
-                    <button class="profile-menu-button">My Membership</button>
-                    <button class="profile-menu-button">My Bookings</button>
-                    <button class="profile-menu-button">Sign Out</button>
                 </div>
+                <button class="profile-menu-button">About Me</button>
+                <button class="profile-menu-button">My Membership</button>
+                <button class="profile-menu-button">My Bookings</button>
+                <button class="profile-menu-button" asp-action="SignOut" asp-controller="Authentication">Sign Out</button>
             </section>
         </aside>
 
@@ -64,7 +64,11 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label" asp-for="AboutMeForm.ProfileImageUrl"></label>
-                    <input class="form-input" asp-for="AboutMeForm.ProfileImageUrl" />
+                    <div class="file-input-group">
+                        <input class="form-input" asp-for="AboutMeForm.ProfileImageUrl" />
+                        <button type="button" class="browse-btn" onclick="document.getElementById('profileImageUpload').click()">Browse</button>
+                        <input type="file" id="profileImageUpload" accept="image/*" style="display: none;" onchange="updateProfileImageUrl(this)" />
+                    </div>
                     <span class="field-validation-error" asp-validation-for="AboutMeForm.ProfileImageUrl"></span>
                 </div>
                 

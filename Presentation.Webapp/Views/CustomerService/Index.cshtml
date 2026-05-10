@@ -4,56 +4,64 @@
     ViewData["Title"] = "Customer Service";
 }
 <section class="customerservice-section">
-    <div class="customerservice-container">
-        <img src="~/images/contact-us-image-1.png"/>
-         <div class="customerservice-info">
-             <div class="phone-info">
-                <img src="~/images/contact-us-phone-icon.png"/>
-                <h3>Phone Number</h3>
-                <p>+(46) 8 410 521 00</p>
+    <div class="container">
+        <div class="customerservice-container">
+            <img src="~/images/contact-us-image-1.png"/>
+             <div class="customerservice-info">
+                 <div class="phone-info">
+                    <img src="~/images/contact-us-phone-icon.png"/>
+                    <div class="contact-details">
+                        <h3>Phone Number</h3>
+                        <p>+(46) 8 410 521 00</p>
+                    </div>
+                 </div>
+                 <div class="email-info">
+                    <img src="~/images/contact-us-email-icon.png"/>
+                    <div class="contact-details">
+                        <h3>Email Address</h3>
+                        <p>info@corefitness.se</p>
+                    </div>
+                 </div>
              </div>
-             <div class="email-info">
-                <img src="~/images/contact-us-email-icon.png"/>
-                <h3>Email Address</h3>
-                <p>info@corefitness.se</p>
-             </div>
-         </div>
-    </div>
-    <div class="customerservice-form-section">
-        <form class="customerservice-form" asp-action="Index" asp-controller="Customerservice" method="post" novalidate>
-            <h2 class="title">Contact Us Today</h2>
-            <p>
-                Ready to begin your fitness journey? Contact GymPro today and let our
-                expert trainers guide you with the right program and support.
-            </p>
-            <div class="form-group">
-                <label class="form-label" asp-for="FirstName"></label>
-                <input class="form-input" asp-for="FirstName" />
-                <span class="field-validation-error" asp-validation-for="FirstName"></span>
-            </div>
-            <div class="form-group">
-                <label class="form-label" asp-for="LastName"></label>
-                <input class="form-input" asp-for="LastName" />
-                <span class="field-validation-error" asp-validation-for="LastName"></span>
-            </div>
-            <div class="form-group">
-                <label class="form-label" asp-for="Email"></label>
-                <input class="form-input" asp-for="Email" />
-                <span class="field-validation-error" asp-validation-for="Email"></span>
-            </div>
-            <div class="form-group">
-                <label class="form-label" asp-for="PhoneNumber"></label>
-                <input class="form-input" asp-for="PhoneNumber" />
-            </div>
-            <div class="form-group">
-                <label class="form-label" asp-for="Message"></label>
-                <input class="form-input" asp-for="Message" />
-                <span class="field-validation-error" asp-validation-for="Message"></span>
-            </div>
-                
-            <div class="form-button-placement">
+        </div>
+        <div class="customerservice-form-section">
+            <form class="customerservice-form" asp-action="Index" asp-controller="CustomerService" method="post" novalidate>
+                <h2 class="title">Contact Us Today</h2>
+                <p>
+                    Ready to begin your fitness journey? Contact CoreFitness today and let our
+                    expert trainers guide you with the right program and support.
+                </p>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" asp-for="FirstName"></label>
+                        <input class="form-input" asp-for="FirstName" />
+                        <span class="field-validation-error" asp-validation-for="FirstName"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" asp-for="LastName"></label>
+                        <input class="form-input" asp-for="LastName" />
+                        <span class="field-validation-error" asp-validation-for="LastName"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" asp-for="Email"></label>
+                        <input class="form-input" asp-for="Email" />
+                        <span class="field-validation-error" asp-validation-for="Email"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" asp-for="PhoneNumber"></label>
+                        <input class="form-input" asp-for="PhoneNumber" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" asp-for="Message"></label>
+                    <textarea class="form-input" asp-for="Message"></textarea>
+                    <span class="field-validation-error" asp-validation-for="Message"></span>
+                </div>
+
                 <button class="form-button" type="submit">Submit Message</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </section>
